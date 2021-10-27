@@ -6,5 +6,4 @@ public interface Shoot {
     public DrawingPanel PanelMaker(int x, int y);
     public Double[] Calculate(Double[] a);
     public double Round(double N);
-
 }
