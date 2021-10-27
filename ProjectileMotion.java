@@ -10,15 +10,13 @@ public class ProjectileMotion {
     public static final int OVALLENGTH = 10;
     public static final int STARTINGPOSX = 500;
     public static final int STARTINGPOSY = 500;
-    public static final Double GRABITY = -9.81;
+
     public static void main(String[] args){
         Double[] BeginningValues = GetInfo();
         Fire MyFire = new Fire();
         Double[] NewSet = MyFire.Calculate(BeginningValues);
         DrawingPanel Board = MyFire.PanelMaker(WIDTH, LENGTH);
         MyFire.Launch(NewSet, OVALWIDTH, OVALLENGTH, STARTINGPOSX, STARTINGPOSY, Board, BeginningValues);
-
-        
     }
     public static Double[] GetInfo(){
         System.out.println("Welcome to Projectile Motion");
@@ -30,15 +28,15 @@ public class ProjectileMotion {
         Scanner GetAngle = new Scanner(System.in);
         System.out.println("Please input an angle: ");
         System.out.println(">");
-        Double Angle = GetAngle.nextDouble();
+        Double Angle = Math.toRadians(GetAngle.nextDouble());
         Scanner GetVelocity = new Scanner(System.in);
         System.out.println("Please input a velocity");
         System.out.println(">");
-        Double Velocity = GetVelocity.nextDouble();
+        Double Velocity = Math.toRadians(GetVelocity.nextDouble());
         Scanner GetSteps = new Scanner(System.in);
         System.out.println("How many many Steps should be completed?");
         System.out.println(">");
-        Double Steps = GetSteps.nextDouble();
+        Double Steps = Math.toRadians(GetSteps.nextDouble());
         Double[] valuables = {Angle, Velocity, Steps};
         return valuables;
     }
